@@ -6,6 +6,7 @@ public class ContructorInjectedController {
 
     private final GreetingService greetingService;
 
+    // constructor injected - most referred way of injection
     public ContructorInjectedController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
