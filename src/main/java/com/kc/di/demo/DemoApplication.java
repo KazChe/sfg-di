@@ -1,9 +1,6 @@
 package com.kc.di.demo;
 
-import com.kc.di.demo.controller.ContructorInjectedController;
-import com.kc.di.demo.controller.MyController;
-import com.kc.di.demo.controller.PropertyInjectedController;
-import com.kc.di.demo.controller.SetterInjectedController;
+import com.kc.di.demo.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,11 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
+
+		System.out.println("--------- Profile");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.getGreeting());
+
 
 		System.out.println("------------  Primary Bean");
 		MyController myController = (MyController) ctx.getBean("myController");
