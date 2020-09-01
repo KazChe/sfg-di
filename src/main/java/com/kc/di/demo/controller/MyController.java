@@ -1,12 +1,19 @@
 package com.kc.di.demo.controller;
 
+import com.kc.di.demo.services.GreetingService;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String getString() {
+    private GreetingService greetingService;
 
-        return "Hey String";
+    public MyController (GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String getString() {
+        return greetingService.greetings();
     }
 }

@@ -15,8 +15,8 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 
+		System.out.println("------------  Primary Bean");
 		MyController myController = (MyController) ctx.getBean("myController");
-//		String greeting = myController.getString();
 		System.out.println(myController.getString());
 
 		System.out.println("------------ Property Injection");
