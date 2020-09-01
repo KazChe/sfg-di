@@ -3,9 +3,9 @@ package com.kc.di.demo.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class ConstructorGreetingService implements GreetingService {
     @Override
     public String greetings() {
-        return "Whatup?";
+        return "Whatup? - Injected For Constructor";
     }
 }
